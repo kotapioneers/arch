@@ -73,12 +73,12 @@ sudo -u $USERNAME yay -S --noconfirm pcsx2-git portmaster
 # ---------------- Flatpak Streaming Apps ----------------
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-sudo -u $USERNAME flatpak install flathub com.spotify.Client -y
-sudo -u $USERNAME flatpak install flathub com.netflix.MozillaNetflix -y
-sudo -u $USERNAME flatpak install flathub com.google.Chrome -y
-sudo -u $USERNAME flatpak install flathub tv.crunchyroll.Crunchyroll -y
-sudo -u $USERNAME flatpak install flathub com.apple.TV -y
-sudo -u $USERNAME flatpak install flathub com.disney.DisneyPlus -y
+# sudo -u $USERNAME flatpak install flathub com.spotify.Client -y
+# sudo -u $USERNAME flatpak install flathub com.netflix.MozillaNetflix -y
+# sudo -u $USERNAME flatpak install flathub com.google.Chrome -y
+# sudo -u $USERNAME flatpak install flathub tv.crunchyroll.Crunchyroll -y
+# sudo -u $USERNAME flatpak install flathub com.apple.TV -y
+# sudo -u $USERNAME flatpak install flathub com.disney.DisneyPlus -y
 
 # ---------------- Batocera 41 Theme ----------------
 git clone https://github.com/batocera-linux/batocera-emulationstation-theme.git /home/$USERNAME/.emulationstation/themes/Batocera41
