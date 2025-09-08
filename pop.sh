@@ -35,9 +35,23 @@ apt install -y sudo git curl wget unzip \
     pulseaudio alsa-utils dbus-x11 \
     xfce4 xfce4-goodies \
     retroarch libretro-core-info \
-    pcsx2 dolphin-emu ppsspp-sdl flycast \
     steam lutris xboxdrv antimicrox gamemode cpufrequtils \
     software-properties-common apt-transport-https ca-certificates gnupg
+
+# --- Emulators ---
+# RetroArch (with cores)
+apt install -y retroarch libretro-core-info
+
+# Add PPAs for Dolphin + PPSSPP
+add-apt-repository -y ppa:dolphin-emu/ppa
+add-apt-repository -y ppa:xuzhen666/ppsspp
+apt update
+
+apt install -y pcsx2 dolphin-emu ppsspp-qt
+
+# Flycast (manual .deb install)
+wget https://github.com/flyinghead/flycast/releases/download/v2.2/flycast-2.2-linux-x64.deb -O /tmp/flycast.deb
+apt install -y /tmp/flycast.deb
 
 # --- 32-bit libraries for Steam/Lutris ---
 dpkg --add-architecture i386
