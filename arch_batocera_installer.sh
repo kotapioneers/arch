@@ -1,6 +1,6 @@
 #!/bin/bash
 # Arch Batocera-style all-in-one installer for 256GB SSD
-# Features: Openbox, EmulationStation, RetroArch, Steam, Flatpak streaming apps,
+# Features: Openbox, EmulationStation, RetroArch, Steam,
 # controller mapping (right stick mouse + triggers), RGSX ROM downloader, ES system settings
 
 set -e
@@ -33,7 +33,7 @@ mkswap /mnt/swapfile
 swapon /mnt/swapfile
 
 # --- Pacstrap Base ---
-pacstrap /mnt base base-devel linux linux-firmware intel-ucode sudo networkmanager git vim xorg xorg-xinit openbox flatpak wget
+pacstrap /mnt base base-devel linux linux-firmware intel-ucode sudo networkmanager git vim xorg xorg-xinit openbox wget
 
 # --- Fstab ---
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -80,9 +80,6 @@ makepkg -si --noconfirm
 # Install Applications
 yay -S --noconfirm pcsx2-git portmaster emulationstation retroarch dolphin-emu ppsspp steam lutris xorg-xrandr xorg-xinput xboxdrv antimicrox python-pip
 
-# Flatpak Streaming Apps
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
 # Batocera 41 Theme
 git clone https://github.com/batocera-linux/batocera-emulationstation-theme.git ~/.emulationstation/themes/Batocera41
 
@@ -106,7 +103,7 @@ mkdir -p "\$ES_CUSTOM"
 # System apps
 for app in /usr/share/applications/*.desktop; do cp "\$app" "\$ES_CUSTOM/" 2>/dev/null || true; done
 
-# User apps (Flatpak & Lutris)
+# User apps (Lutris etc.)
 for app in /home/$USERNAME/.local/share/applications/*.desktop; do cp "\$app" "\$ES_CUSTOM/" 2>/dev/null || true; done
 
 # RGSX ROM Downloader
