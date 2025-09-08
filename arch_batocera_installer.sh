@@ -253,6 +253,26 @@ Type=Application
 EOL
 chown "$USERNAME_ENV:$USERNAME_ENV" /home/$USERNAME_ENV/.emulationstation/custom_apps/system_settings.desktop || true
 
+# --- Inside user_setup.sh, after system_settings.desktop is created ---
+
+# Create .desktop for Steam
+cat > /home/$USERNAME_ENV/.emulationstation/custom_apps/steam.desktop <<'EOL'
+[Desktop Entry]
+Name=Steam
+Exec=steam
+Type=Application
+EOL
+chown "$USERNAME_ENV:$USERNAME_ENV" /home/$USERNAME_ENV/.emulationstation/custom_apps/steam.desktop || true
+
+# Create .desktop for Lutris
+cat > /home/$USERNAME_ENV/.emulationstation/custom_apps/lutris.desktop <<'EOL'
+[Desktop Entry]
+Name=Lutris
+Exec=lutris
+Type=Application
+EOL
+chown "$USERNAME_ENV:$USERNAME_ENV" /home/$USERNAME_ENV/.emulationstation/custom_apps/lutris.desktop || true
+
 echo "User setup script finished."
 USER_SCRIPT
 
