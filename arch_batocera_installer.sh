@@ -184,7 +184,7 @@ sudo -u "$USERNAME_ENV" yay -S --noconfirm pcsx2-git portmaster emulationstation
 # Add flathub and install common streaming apps system-wide
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo || true
 # Install a few big streaming apps system-wide; note: not all streaming services are available as flatpaks named this way
-flatpak install --system -y flathub com.spotify.Client tv.crunchyroll.Crunchyroll com.google.Chrome com.discordapp.Discord
+# flatpak install --system -y flathub com.spotify.Client tv.crunchyroll.Crunchyroll com.google.Chrome com.discordapp.Discord
 
 # Clone batocera theme into user's .emulationstation
 sudo -u "$USERNAME_ENV" bash -c 'mkdir -p ~/.emulationstation/themes && git clone https://github.com/batocera-linux/batocera-emulationstation-theme.git ~/.emulationstation/themes/Batocera41 || true'
